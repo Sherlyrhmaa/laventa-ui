@@ -3,44 +3,42 @@
   "version": "0.1.4",
   "description": "A modern UI component library for React and Next.js",
   "type": "module",
-
   "exports": {
     ".": {
       "import": "./src/index.js"
     }
   },
-
-  "files": ["src"],
-
+  "files": [
+    "src"
+  ],
   "scripts": {
     "dev": "next dev --webpack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-
   "peerDependencies": {
     "react": "^18 || ^19",
     "react-dom": "^18 || ^19",
     "styled-components": "^6"
   },
-
   "dependencies": {
     "babel-plugin-styled-components": "^2.1.4",
     "lucide-react": "^0.552.0",
     "react-icons": "^5.5.0",
     "sass": "^1.93.3"
   },
-
   "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@types/react": "^19.2.8",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.0",
+    "next": "16.1.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "styled-components": "^6.1.19",
-    "next": "16.1.0",
-    "eslint": "^9",
-    "eslint-config-next": "16.1.0"
+    "typescript": "^5.9.3"
   },
-
   "keywords": [
     "react",
     "ui",

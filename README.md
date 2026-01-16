@@ -1,36 +1,272 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃                 LAVENTA UI                   ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Laventa UI** adalah modern UI component library untuk **React** dan **Next.js** dengan berbagai varian komponen yang cantik dan fleksibel.
+Dibangun menggunakan **styled-components** untuk mendukung theming yang konsisten dan mudah dikustomisasi.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 📦 Installation
 
-## Learn More
+Pilih salah satu package manager berikut:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm install laventa-ui
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+yarn add laventa-ui
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm add laventa-ui
+```
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ⚙️ Requirements
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Pastikan dependensi berikut sudah terpasang di project kamu:
+
+```bash
+npm install react react-dom styled-components
+```
+
+---
+
+## 🚀 Quick Start
+
+```jsx
+import { Button } from 'laventa-ui';
+
+function App() {
+  return <Button>Click Me</Button>;
+}
+
+export default App;
+```
+
+---
+
+## Components & Variants
+
+### Button
+
+```jsx
+import { Button } from 'laventa-ui';
+
+<Button variant="primary">Submit</Button>
+<Button variant="outline">Cancel</Button>
+<Button variant="glow">⚠️ Warning</Button>
+<Button variant="pill">Pill Button</Button>
+<Button variant="breathing">Processing...</Button>
+```
+
+**Available variants:**
+`primary`, `outline`, `glow`, `pill`, `breathing`
+
+---
+
+### Card
+
+```jsx
+import { Card } from 'laventa-ui';
+
+<Card variant="glass" title="Glass Card" description="Transparent effect" />
+
+<Card
+  variant="profile"
+  title="John Doe"
+  description="Frontend Developer"
+  image="/avatar.jpg"
+  actionLabel="Follow"
+  onAction={() => console.log('Followed')}
+/>
+
+<Card
+  variant="stats"
+  title="Progress"
+  description="Project completion"
+  stats="85%"
+  image="/stats-bg.jpg"
+/>
+
+<Card
+  variant="feature"
+  title="Premium Feature"
+  description="Highlight important features"
+  image="/feature-bg.jpg"
+  actionLabel="Explore"
+/>
+
+<Card
+  variant="shimmer"
+  title="Shimmer Card"
+  description="With animated shimmer effect"
+/>
+```
+
+**Available variants:**
+`glass`, `profile`, `stats`, `feature`, `shimmer`
+
+---
+
+### Header
+
+```jsx
+import { Header } from 'laventa-ui';
+
+<Header variant="default">
+  <h3>My Website</h3>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+  </nav>
+</Header>
+
+<Header variant="withLogo">
+  <img src="/logo.png" alt="Logo" />
+  <h2>My Brand</h2>
+  <nav>...</nav>
+</Header>
+
+<Header
+  variant="withImage"
+  title="Hero Section"
+  image="/header-bg.jpg"
+>
+  <h1>Welcome</h1>
+  <nav>...</nav>
+</Header>
+
+<Header variant="glowTitle">
+  <h1>GLOWING TITLE</h1>
+  <nav>...</nav>
+</Header>
+```
+
+**Available variants:**
+`default`, `withLogo`, `withImage`, `glowTitle`
+
+---
+
+### Footer
+
+```jsx
+import { Footer } from 'laventa-ui';
+
+<Footer
+  variant="center"
+  content={{
+    p: "© 2024 My App",
+    small: "All rights reserved",
+  }}
+/>
+
+<Footer
+  variant="gradient"
+  content={{
+    p: "Follow Us",
+    small: "Stay connected",
+    socials: ["instagram", "twitter", "facebook"],
+  }}
+/>
+
+<Footer
+  variant="links"
+  content={{
+    columns: [
+      {
+        title: "Company",
+        links: [
+          { label: "About", href: "/about" },
+          { label: "Team", href: "/team" },
+        ],
+      },
+    ],
+    bottom: "© 2024 Company Name",
+  }}
+/>
+
+<Footer
+  variant="waveGlow"
+  content={{
+    p: "Laventa UI",
+    small: "With animated wave border",
+  }}
+/>
+```
+
+**Available variants:**
+`center`, `gradient`, `links`, `waveGlow`
+
+---
+
+### Sidebar
+
+```jsx
+import { Sidebar } from 'laventa-ui';
+
+<Sidebar
+  variant="gradient"
+  title="Navigation"
+  menu={[
+    { label: "Dashboard" },
+    { label: "Profile" },
+    { label: "Settings" },
+    { label: "Logout" },
+  ]}
+  onSelect={(item) => console.log('Selected:', item)}
+/>
+
+<Sidebar
+  variant="glass"
+  title="Menu"
+  menu={[
+    { label: "Home", icon: "🏠" },
+    { label: "About", icon: "👤" },
+    { label: "Settings", icon: "⚙️" },
+  ]}
+/>
+
+<Sidebar
+  variant="modern"
+  title="Navigation"
+  menu={[...]}
+  bottomButton={{
+    label: "Contact Us",
+    onClick: () => console.log('Contact clicked'),
+  }}
+/>
+
+<Sidebar variant="BorderAnimation" title="Menu" menu={[...]} />
+```
+
+**Available variants:**
+`gradient`, `glass`, `modern`, `BorderAnimation`
+
+---
+
+## Customization
+
+Semua komponen mendukung props React standar seperti `style`, `className`, dan event handler.
+
+```jsx
+<Button
+  variant="primary"
+  style={{ margin: '10px', borderRadius: '20px' }}
+  className="my-custom-class"
+  onClick={() => console.log('Clicked!')}
+>
+  Custom Button
+</Button>
+```
+
+---
+
+## 📄 License
+
+MIT License © 2024 **Sherly Puput Rahmawati**
